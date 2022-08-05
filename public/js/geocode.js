@@ -1,8 +1,8 @@
 const request = require('postman-request')
-const { mapBoxToken } = require('./keys')
+const token = process.env.MAPBOX_TOKEN
 
 const geocode = (location, callback) => {
-	const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?proximity=-74.70850,40.78375&access_token=${mapBoxToken}&limit=1`
+	const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?proximity=-74.70850,40.78375&access_token=${token}&limit=1`
 	request({ url, json: true }, (err, res) => {
 		if (err) {
 			return callback({

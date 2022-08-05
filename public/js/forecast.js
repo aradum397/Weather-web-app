@@ -1,8 +1,8 @@
 const request = require('postman-request')
-const { weatherStackToken } = require('./keys')
+const key = process.env.WEATHERSTACK_KEY
 
 const forecast = (latitude, longitude, callback) => {
-	const url = `http://api.weatherstack.com/current?access_key=${weatherStackToken}&query=${longitude},${latitude}`
+	const url = `http://api.weatherstack.com/current?access_key=${key}&query=${longitude},${latitude}`
 	request({ url, json: true }, (err, res) => {
 		if (err) {
 			return callback({
