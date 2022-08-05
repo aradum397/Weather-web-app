@@ -1,0 +1,44 @@
+<div class="row">
+	<div class="col-md-4 offset-md-4">
+		<div class="card shadow opacity-75 bg-dark px-3">
+			<div class="card-body mt-2">
+				<h5 class="card-title">
+					<%=weather.location.name%>, <%=weather.location.region%>
+				</h5>
+				<h6 class="card-subtitle">
+					<%=weather.current.weather_descriptions[0]%>
+				</h6>
+			</div>
+			<ul>
+				<li>
+					temperature:
+					<%=weather.current.temperature%> °C
+				</li>
+				<li>
+					feels like:
+					<%=weather.current.feelslike%> °C
+				</li>
+				<li>
+					wind speed:
+					<%=weather.current.wind_speed%> m/s
+				</li>
+				<li>
+					air pressure:
+					<%=weather.current.pressure%> mbar
+				</li>
+				<li>
+					precipitations:
+					<%=weather.current.precip%> mm
+				</li>
+				<li>
+					humidity:
+					<%=weather.current.humidity%> %
+				</li>
+				<li>
+					cloud cover:
+					<%=weather.current.cloudcover%> %
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
