@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
+  require('dotenv').config()
 }
 
 const express = require('express')
@@ -22,8 +22,8 @@ app.get('', (req, res) => {
 	res.render('')
 })
 
-app.post('', (req, res) => {
-	const { location } = req.body
+app.get('/get-weather', (req, res) => {
+	const { location } = req.query
 	const weather = geocode(location, (geodata) => {
 		if (geodata.error) {
 			return res.render('error', { error: geodata.error })
