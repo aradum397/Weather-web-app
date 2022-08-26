@@ -41,6 +41,10 @@ app.get('/get-weather', (req, res) => {
 	})
 })
 
+app.get('/test', (req, res) => [
+	res.render('test')
+])
+
 app.get('*', (req, res) => {
 	res.render('error', { error: "Ah, beans!"})
 })
